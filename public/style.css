@@ -1,0 +1,89 @@
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#0b1e3b;
+  color:white;
+}
+
+/* container */
+
+.container{
+  width:90%;
+  max-width:400px;
+  margin:auto;
+  margin-top:40px;
+  background:#122b57;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 0 10px black;
+}
+
+/* input */
+
+input,select{
+  width:100%;
+  padding:10px;
+  margin-top:10px;
+  border:none;
+  border-radius:5px;
+  font-size:16px;
+}
+
+/* button */
+
+button{
+  width:100%;
+  padding:10px;
+  margin-top:10px;
+  border:none;
+  border-radius:5px;
+  background:#00aaff;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#0088cc;
+}
+
+/* title */
+
+h2{
+  text-align:center;
+}
+
+/* saldo box */
+
+.saldo{
+  background:#001f44;
+  padding:15px;
+  border-radius:10px;
+  margin-bottom:10px;
+  font-size:18px;
+  text-align:center;
+}
+
+/* table */
+
+table{
+  width:100%;
+  background:white;
+  color:black;
+  margin-top:10px;
+}
+
+td,th{
+  padding:5px;
+  border:1px solid #ccc;
+}
+
+/* admin */
+
+pre{
+  background:black;
+  color:lime;
+  padding:10px;
+  height:300px;
+  overflow:auto;
+}
