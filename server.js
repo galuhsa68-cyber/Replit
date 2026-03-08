@@ -161,4 +161,4 @@ app.get("/data",(req,res)=>{
 
 });
 
-app.listen(5000,()=>console.log("jalan"));
+app.listen(3000,()=>console.log("jalan"));
