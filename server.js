@@ -6,6 +6,11 @@ const app = express();
 app.use(express.json());
 app.use(express.static("public"));
 
+/* ===== FIX HOME ===== */
+app.get("/", (req,res)=>{
+  res.sendFile(__dirname + "/public/index.html");
+});
+
 let users = [];
 let transaksi = [];
 
@@ -19,6 +24,8 @@ function save() {
   fs.writeFileSync("users.json", JSON.stringify(users));
   fs.writeFileSync("transaksi.json", JSON.stringify(transaksi));
 }
+
+/* ===== DAFTAR ===== */
 
 app.post("/daftar", (req, res) => {
 
@@ -39,6 +46,8 @@ app.post("/daftar", (req, res) => {
 
 });
 
+/* ===== LOGIN ===== */
+
 app.post("/login", (req, res) => {
 
   const { username, password } = req.body;
@@ -53,6 +62,8 @@ app.post("/login", (req, res) => {
   res.send(user);
 
 });
+
+/* ===== TRANSFER ===== */
 
 app.post("/transfer", (req, res) => {
 
@@ -82,6 +93,8 @@ app.post("/transfer", (req, res) => {
 
 });
 
+/* ===== TARIK ===== */
+
 app.post("/tarik",(req,res)=>{
 
   const { username, jumlah } = req.body;
@@ -89,6 +102,8 @@ app.post("/tarik",(req,res)=>{
   let biaya = 2000;
 
   let u = users.find(x=>x.username===username);
+
+  if(!u) return res.send("gagal");
 
   if(u.saldo < jumlah + biaya)
     return res.send("kurang");
@@ -107,6 +122,8 @@ app.post("/tarik",(req,res)=>{
   res.send("ok");
 
 });
+
+/* ===== TOPUP ===== */
 
 app.post("/topup",(req,res)=>{
 
@@ -128,6 +145,8 @@ app.post("/topup",(req,res)=>{
   res.send("ok");
 
 });
+
+/* ===== ACC ===== */
 
 app.post("/acc",(req,res)=>{
 
@@ -152,6 +171,8 @@ app.post("/acc",(req,res)=>{
 
 });
 
+/* ===== DATA ===== */
+
 app.get("/data",(req,res)=>{
 
   res.send({
@@ -161,4 +182,8 @@ app.get("/data",(req,res)=>{
 
 });
 
-app.listen(3000,()=>console.log("jalan"));
+/* ===== PORT FIX REPLIT ===== */
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT,()=>console.log("jalan"));
