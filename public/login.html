@@ -1,7 +1,43 @@
-<input id="username">
-<input id="password">
+<!DOCTYPE html>
+<html>
+<head>
 
-<button onclick="login()">Login</button>
-<button onclick="daftar()">Daftar</button>
+<title>Login Bank Mini</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Login / Daftar</h2>
+
+<input
+ id="username"
+ placeholder="Username"
+/>
+
+<input
+ id="password"
+ type="password"
+ placeholder="Password"
+/>
+
+<button onclick="login()">
+Login
+</button>
+
+<button onclick="daftar()">
+Daftar
+</button>
+
+<p id="info"></p>
+
+</div>
 
 <script src="script.js"></script>
+
+</body>
+</html>
